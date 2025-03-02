@@ -1,0 +1,121 @@
+total executions of each stack trace:
+Entry: 1/32 Calls: 220/1376 = 15.99% [sum: 220; 220/1376 = 15.99%]
+  tigr.nim: totcui 233/1376 = 16.93%
+  main.nim: drawFlat 666/1376 = 48.40%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: beginDrawSector 1310/1376 = 95.20%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 2/32 Calls: 217/1376 = 15.77% [sum: 437; 437/1376 = 31.76%]
+  main.nim: drawFlat 666/1376 = 48.40%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: beginDrawSector 1310/1376 = 95.20%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 3/32 Calls: 216/1376 = 15.70% [sum: 653; 653/1376 = 47.46%]
+  main.nim: drawFlat 666/1376 = 48.40%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: beginDrawSector 1310/1376 = 95.20%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 4/32 Calls: 211/1376 = 15.33% [sum: 864; 864/1376 = 62.79%]
+  system.nim: toFloat 287/1376 = 20.86%
+  system.nim: / 423/1376 = 30.74%
+  main.nim: drawWall 571/1376 = 41.50%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: beginDrawSector 1310/1376 = 95.20%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 5/32 Calls: 92/1376 = 6.69% [sum: 956; 956/1376 = 69.48%]
+  main.nim: drawWall 571/1376 = 41.50%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: beginDrawSector 1310/1376 = 95.20%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 6/32 Calls: 90/1376 = 6.54% [sum: 1046; 1046/1376 = 76.02%]
+  system.nim: / 423/1376 = 30.74%
+  main.nim: drawWall 571/1376 = 41.50%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: beginDrawSector 1310/1376 = 95.20%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 7/32 Calls: 76/1376 = 5.52% [sum: 1122; 1122/1376 = 81.54%]
+  system.nim: toFloat 287/1376 = 20.86%
+  system.nim: / 423/1376 = 30.74%
+  main.nim: drawWall 571/1376 = 41.50%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: beginDrawSector 1310/1376 = 95.20%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 8/32 Calls: 72/1376 = 5.23% [sum: 1194; 1194/1376 = 86.77%]
+  main.nim: drawPortal 72/1376 = 5.23%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: beginDrawSector 1310/1376 = 95.20%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 9/32 Calls: 57/1376 = 4.14% [sum: 1251; 1251/1376 = 90.92%]
+  main.nim: drawWall 571/1376 = 41.50%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: beginDrawSector 1310/1376 = 95.20%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 10/32 Calls: 44/1376 = 3.20% [sum: 1295; 1295/1376 = 94.11%]
+  system.nim: / 423/1376 = 30.74%
+  main.nim: drawWall 571/1376 = 41.50%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: beginDrawSector 1310/1376 = 95.20%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 11/32 Calls: 24/1376 = 1.74% [sum: 1319; 1319/1376 = 95.86%]
+  main.nim: fill_lut 24/1376 = 1.74%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 12/32 Calls: 13/1376 = 0.94% [sum: 1332; 1332/1376 = 96.80%]
+  tigr.nim: totcui 233/1376 = 16.93%
+  main.nim: drawFlat 666/1376 = 48.40%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: drawSector 1310/1376 = 95.20%
+  main.nim: beginDrawSector 1310/1376 = 95.20%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 13/32 Calls: 11/1376 = 0.80% [sum: 1343; 1343/1376 = 97.60%]
+  png.nim: decodeImageData 29/1376 = 2.11%
+  png.nim: decodePng 31/1376 = 2.25%
+  png.nim: decodePng 31/1376 = 2.25%
+  pixie.nim: decodeImage 31/1376 = 2.25%
+  pixie.nim: readImage 31/1376 = 2.25%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 14/32 Calls: 8/1376 = 0.58% [sum: 1351; 1351/1376 = 98.18%]
+  main.nim: main 1375/1376 = 99.93%
+Entry: 15/32 Calls: 4/1376 = 0.29% [sum: 1355; 1355/1376 = 98.47%]
+  png.nim: unfilter 4/1376 = 0.29%
+  png.nim: decodeImageData 29/1376 = 2.11%
+  png.nim: decodePng 31/1376 = 2.25%
+  png.nim: decodePng 31/1376 = 2.25%
+  pixie.nim: decodeImage 31/1376 = 2.25%
+  pixie.nim: readImage 31/1376 = 2.25%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 16/32 Calls: 3/1376 = 0.22% [sum: 1358; 1358/1376 = 98.69%]
+  inflate.nim: inflateBlock 12/1376 = 0.87%
+  inflate.nim: inflate 12/1376 = 0.87%
+  zippy.nim: uncompress 12/1376 = 0.87%
+  zippy.nim: uncompress 12/1376 = 0.87%
+  png.nim: decodeImageData 29/1376 = 2.11%
+  png.nim: decodePng 31/1376 = 2.25%
+  png.nim: decodePng 31/1376 = 2.25%
+  pixie.nim: decodeImage 31/1376 = 2.25%
+  pixie.nim: readImage 31/1376 = 2.25%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 17/32 Calls: 2/1376 = 0.15% [sum: 1360; 1360/1376 = 98.84%]
+  colortypes.nim: rgba 2/1376 = 0.15%
+  png.nim: decodeImageData 29/1376 = 2.11%
+  png.nim: decodePng 31/1376 = 2.25%
+  png.nim: decodePng 31/1376 = 2.25%
+  pixie.nim: decodeImage 31/1376 = 2.25%
+  pixie.nim: readImage 31/1376 = 2.25%
+  main.nim: main 1375/1376 = 99.93%
+Entry: 18/32 Calls: 2/1376 = 0.15% [sum: 1362; 1362/1376 = 98.98%]
+  internal.nim: write64 3/1376 = 0.22%
+  internal.nim: copy64 3/1376 = 0.22%
+  inflate.nim: inflateBlock 12/1376 = 0.87%
+  inflate.nim: inflate 12/1376 = 0.87%
+  zippy.nim: uncompress 12/1376 = 0.87%
+  zippy.nim: uncompress 12/1376 = 0.87%
+  png.nim: decodeImageData 29/1376 = 2.11%
+  png.nim: decodePng 31/1376 = 2.25%
+  png.nim: decodePng 31/1376 = 2.25%
+  pixie.nim: decodeImage 31/1376 = 2.25%
+  pixie.nim: readImage 31/1376 = 2.25%
+  main.nim: main 1375/1376 = 99.93%

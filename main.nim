@@ -1,6 +1,6 @@
 import tigr
 import std/math
-import times, pixie, os
+import times, pixie, os, nimperf
 
 {.push boundChecks: off, overflowChecks: off, nilChecks: off, assertions: off, warnings: off, hints: off, optimization: speed, patterns: off.}
 
@@ -148,7 +148,8 @@ proc drawFlat(flat: uint8, culling_box: tuple, check_buffer: bool): void {.inlin
   else:
     COLOUR = 127
 
-  if not check_buffer:
+  case check_buffer:
+  of false:
     if flat == 1:
       # access ceiling LUT
       for x in X0..X1:
@@ -291,13 +292,16 @@ proc drawWall(x0, x1, y0, y1, y2, y3: int, culling_box: tuple, flat: uint8, chec
         texStep = (intTexX-currentTex) div 8
       currentTex += texStep
       # If 'y' index is too high or low, the program will have a SIGSEGV: Illegal Storage Access.
-      if flat == 0:
+      case flat
+      of 0:
         ptrCeilLut[x] = CULL_Y1
         ptrFloorLut[x] = CULL_Y2
-      elif flat == 1:
+      of 1:
         ptrCeilLut[x] = CULL_Y1
-      elif flat == 2:
+      of 2:
         ptrFloorLut[x] = CULL_Y2
+      else:
+        discard
 
       let dxWY = (wY2.int - wY1.int)
       var index = CULL_Y1 * W + x
@@ -334,14 +338,17 @@ proc drawWall(x0, x1, y0, y1, y2, y3: int, culling_box: tuple, flat: uint8, chec
         texStep = (intTexX-currentTex) div 16
       currentTex += texStep
       # If 'y' index is too high or low, the program will have a SIGSEGV: Illegal Storage Access.
-      if flat == 0:
+      case flat
+      of 0:
         ptrCeilLut[x] = CULL_Y1
         ptrFloorLut[x] = CULL_Y2
-      elif flat == 1:
+      of 1:
         ptrCeilLut[x] = CULL_Y1
-      elif flat == 2:
+      of 2:
         ptrFloorLut[x] = CULL_Y2
-
+      else:
+        discard
+      
       let dxWY = (wY2.int - wY1.int)
       var index = CULL_Y1 * W + x
       for y in CULL_Y1..CULL_Y2:
@@ -435,7 +442,6 @@ proc drawSector(sector_to_draw: sector, pSn: float, pCs: float, raw_culling_box:
         sy1 = wz0 * inv_ty1F + H2
         sy2 = wz1 * inv_ty0F + H2
         sy3 = wz1 * inv_ty1F + H2
-
       drawWall(int(x0), int(x1), int(sy0), int(sy1), int(sy2), int(sy3), culling_box, 0'u8, check_buffer, t0, t1, ty0, ty1) # 0 = Both, 1 = Ceiling, 2 = Floor
     else:
       var
@@ -540,21 +546,15 @@ while screen.closed() == 0:
   let pSn = sn[int(character.yaw)]
   let pCs = cs[int(character.yaw)]
 
-  let st = epochTime()
+  #let st = epochTime()
   beginDrawSector(0, pSn, pCs, (1, W1, 1.0, 1.0, fH1, fH1, fW1-1.0))
-  let et_s = epochTime()
-  let st_f = 1/(et_s-st)
-  fill_lut(ceilLut)
-  fill_lut(floorLut)
-  
-  #[
-    Screen Buffer won't be cleared
-    1; Render first sector walls, then flats, but do not check if pixel is available
-    2; Render portal sector walls, then flats, and check if pixel is available
-  ]#
   update(screen)  # Refresh the screen
-  let et = epochTime()
-  let ft = 1/(et-st)
+  #let et_s = epochTime()
+  #let st_f = (et_s-st)*1000
+  #echo st_f
+  
+  #[let et = epochTime()
+  let ft = (et-st)*1000
   i += 1
   avg += st_f
   avg2 += ft
@@ -562,6 +562,8 @@ while screen.closed() == 0:
     echo "Sector Draw Rate: ", $int(avg/i), "/s Actual Frame Rate: ", $int(avg2/i)
     avg = 0.0
     avg2 = 0.0
-    i = 0
-
+    i = 0]#
+  fill_lut(ceilLut)
+  fill_lut(floorLut)
+  
 {.pop.}
