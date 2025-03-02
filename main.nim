@@ -1,6 +1,6 @@
 import tigr
 import std/math
-import times, pixie, os, nimperf
+import times, pixie, os
 
 {.push boundChecks: off, overflowChecks: off, nilChecks: off, assertions: off, warnings: off, hints: off, optimization: speed, patterns: off.}
 
